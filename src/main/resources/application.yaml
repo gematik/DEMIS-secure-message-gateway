@@ -1,0 +1,32 @@
+spring:
+  config:
+    import: classpath:/base-config-application.yaml
+
+  rabbitmq:
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:rabbit_user}
+    password: ${SPRING_RABBITMQ_PASSWORD:rabbit_password}
+    virtual-host: ${SPRING_RABBITMQ_VIRTUAL_HOST:bulk}
+
+    # 'correlated' is required to match the broker ack back to the original message via ConfirmCallback
+    publisher-confirm-type: correlated
+    # Enables the return mechanism on the connection factory so that RabbitMQ sends
+    # unroutable messages back to the producer instead of silently dropping them.
+    publisher-returns: true
+    template:
+      # Sets the mandatory flag on every published message, ensuring RabbitMQ must
+      # route it to at least one queue — otherwise a ReturnCallback is triggered.
+      mandatory: true
+      observation-enabled: true
+
+# Information for the /info Endpoint
+info:
+  app:
+    name: '@project.name@'
+    version: '@project.version@'
+
+app:
+  encryption:
+    # Current encryption key for secure-queue messages. Must be 16 bytes
+    current-key:
