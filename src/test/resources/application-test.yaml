@@ -1,0 +1,3 @@
+app:
+  encryption:
+    current-key: 0123456789abcdef
