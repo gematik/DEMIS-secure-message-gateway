@@ -2,6 +2,11 @@
 
 # Release Notes Secure-Message-Gateway
 
+## Release 1.1.0
+- updated jvm params and secret handling in helm charts
+- Replaced pod anti-affinity with topology spread constraints for pod distribution
+- fixed handling of falsy custom environment variables (false, 0) in helm chart
+
 ## Release 1.0.0 
 - updated base-image and updated from java 21 to java 25
 - Removed istio helm chart

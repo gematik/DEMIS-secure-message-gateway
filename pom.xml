@@ -4,11 +4,11 @@
   <parent>
     <groupId>de.gematik.demis</groupId>
     <artifactId>spring-parent</artifactId>
-    <version>4.0.4</version>
+    <version>4.0.6</version>
     <relativePath></relativePath><!-- lookup parent from repository -->
   </parent>
   <artifactId>secure-message-gateway</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.1.0-SNAPSHOT</version>
   <name>secure-message-gateway</name>
   <packaging>jar</packaging>
   <description>Gateway for transferring messages to the secure queue of RabbitMQ</description>
@@ -18,13 +18,11 @@
       <url>https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12</url>
     </license>
   </licenses>
-  <dependencies>
-    <!-- RabbitMQ Support -->
+  <dependencies><!-- RabbitMQ Support -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-amqp</artifactId>
     </dependency>
-    <!-- Test Dependencies -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-testcontainers</artifactId>
@@ -39,6 +37,6 @@
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers-junit-jupiter</artifactId>
       <scope>test</scope>
-    </dependency>
+    </dependency><!-- Test Dependencies -->
   </dependencies>
 </project>
