@@ -2,6 +2,12 @@
 
 # Release Notes Secure-Message-Gateway
 
+## Release 1.1.1
+- updated spring-parent to version 4.1.11
+- updated base-image to 1.0.7
+- added vex documents
+- Updated minor/patch versions of dependencies
+
 ## Release 1.1.0
 - updated jvm params and secret handling in helm charts
 - Replaced pod anti-affinity with topology spread constraints for pod distribution
