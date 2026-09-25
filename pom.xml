@@ -4,11 +4,11 @@
   <parent>
     <groupId>de.gematik.demis</groupId>
     <artifactId>spring-parent</artifactId>
-    <version>4.0.6</version>
+    <version>4.1.12</version>
     <relativePath></relativePath><!-- lookup parent from repository -->
   </parent>
   <artifactId>secure-message-gateway</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.1-SNAPSHOT</version>
   <name>secure-message-gateway</name>
   <packaging>jar</packaging>
   <description>Gateway for transferring messages to the secure queue of RabbitMQ</description>
@@ -18,6 +18,16 @@
       <url>https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12</url>
     </license>
   </licenses>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <!-- explicitly declared due to CVE-2026-63337, CVE-2026-69219, CVE-2026-69220, remove when upgrading spring-boot-starter-amqp -->
+        <groupId>com.rabbitmq</groupId>
+        <artifactId>amqp-client</artifactId>
+        <version>5.36.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies><!-- RabbitMQ Support -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
